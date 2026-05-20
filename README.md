@@ -1,32 +1,36 @@
-# News NLP Text Analysis Dashboard
+# News NLP Text Analysis
 
-A Python and NLP project for analyzing scraped news articles with sentiment, readability, and writing-style metrics.
+This project converts a Blackcoffer-style text analytics assignment into a cleaner NLP portfolio project. The original workflow scraped article text, stored each article as a text file, and calculated business-facing linguistic indicators such as polarity, subjectivity, Fog Index, average sentence length, complex-word count, and personal pronoun frequency.
 
-## Portfolio Context
+The repository keeps the original Python assignment script in `src/blackcoffer_analysis.py`, adds a reusable metric module in `src/text_metrics.py`, and presents the output through a Dash app instead of a generic Streamlit page.
 
-This repository is a cleaned public portfolio version of coursework/project material maintained under Snega Murugan's GitHub profile. Raw folders, virtual environments, private keys, and large datasets were intentionally excluded.
+## What This Demonstrates
 
-## Features
+- Web/text ingestion workflow for article corpora.
+- Rule-based sentiment scoring using positive and negative lexicons.
+- Readability scoring with complex-word and sentence-length metrics.
+- Editorial review prioritization using Fog Index and sentiment thresholds.
+- Dash dashboard design for analytics storytelling.
 
-- Professional Streamlit dashboard or app entrypoint.
-- Sample data included so the project can run without private credentials.
-- Original analysis/code artifacts preserved where safe.
-- Clear setup and run instructions for recruiters and technical reviewers.
+## Repository Structure
 
-## Setup
-
-```powershell
-python -m venv .venv
-.\.venv\Scriptsctivate
-pip install -r requirements.txt
-```
+- `src/blackcoffer_analysis.py` - original coursework script.
+- `src/text_metrics.py` - cleaned reusable metric functions.
+- `data/news_metrics_sample.csv` - safe portfolio sample of computed metrics.
+- `artifacts/Output.xlsx` - original output workbook retained as an artifact.
+- `dash_app.py` - interactive Dash dashboard.
 
 ## Run
 
 ```powershell
-streamlit run streamlit_app.py
+python -m venv .venv
+.\.venv\Scripts\activate
+pip install -r requirements.txt
+python dash_app.py
 ```
 
-## Notes
+Then open the local Dash URL shown in the terminal.
 
-- This is an educational portfolio project. Validate results before using them for business or policy decisions.
+## Portfolio Note
+
+The public repo avoids publishing the full scraped article corpus as the primary dataset. The sample metrics file is enough to demonstrate the analysis and dashboard without turning the repository into a raw data dump.
